@@ -1,0 +1,13 @@
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# VS Code specific
+.vscode/
+
+# Node modules (if you ever use npm/node for frontend tooling)
+node_modules/
+
+# Any temporary/build folders
+/dist/
+/build/

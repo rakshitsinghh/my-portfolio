@@ -1,613 +1,639 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Rakshit Singh - Portfolio</title>
-  <style>
-    /* Reset & base */
-    * {
-      margin: 0; padding: 0; box-sizing: border-box;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rakshit Singh - Portfolio</title>
 
-    body {
-      background-color: #121212;
-      color: #ddd;
-      line-height: 1.6;
-      min-height: 100vh;
-    }
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+<style>
 
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
+  /*===== GOOGLE FONTS =====*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+/*===== VARIABLES CSS =====*/
+:root {
+  --header-height: 3rem;
+  --font-semi: 600;
+  /*===== Colores =====*/
+  /*Purple 260 - Red 355 - Blue 224 - Pink 340*/
+  /* HSL color mode */
+  --hue-color: 224;
+  --first-color: hsl(var(--hue-color), 89%, 60%);
+  --second-color: hsl(var(--hue-color), 56%, 12%);
+  /*===== Fuente y tipografia =====*/
+  --body-font: "Poppins", sans-serif;
+  --big-font-size: 2rem;
+  --h2-font-size: 1.25rem;
+  --normal-font-size: .938rem;
+  --smaller-font-size: .75rem;
+  /*===== Margenes =====*/
+  --mb-2: 1rem;
+  --mb-4: 2rem;
+  --mb-5: 2.5rem;
+  --mb-6: 3rem;
+  /*===== z index =====*/
+  --z-back: -10;
+  --z-fixed: 100;
+}
+@media screen and (min-width: 968px) {
+  :root {
+    --big-font-size: 3.5rem;
+    --h2-font-size: 2rem;
+    --normal-font-size: 1rem;
+    --smaller-font-size: .875rem;
+  }
+}
 
-    /* Container */
-    .container {
-      width: 90%;
-      max-width: 1200px;
-      margin: auto;
-      padding: 30px 0;
-    }
+/*===== BASE =====*/
+*, ::before, ::after {
+  box-sizing: border-box;
+}
 
-    /* Header */
-    header {
-      background: #181818;
-      padding: 20px 0;
-      text-align: center;
-      border-bottom: 3px solid #03dac6;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
+html {
+  scroll-behavior: smooth;
+}
 
-    header h1 {
-      font-size: 3rem;
-      color: #03dac6;
-      letter-spacing: 2px;
-    }
+body {
+  margin: var(--header-height) 0 0 0;
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  color: var(--second-color);
+}
 
-    nav ul {
-      list-style: none;
-      display: flex;
-      justify-content: center;
-      margin-top: 15px;
-      gap: 30px;
-    }
+h1, h2, p {
+  margin: 0;
+}
 
-    nav ul li {
-      font-weight: 600;
-      font-size: 1.1rem;
-    }
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
 
-    nav ul li a:hover {
-      color: #03dac6;
-      transition: 0.3s;
-    }
+a {
+  text-decoration: none;
+}
 
-    /* Hero Section */
-    #hero {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      height: 80vh;
-      background: linear-gradient(135deg, #03dac6, #121212);
-      text-align: center;
-      padding: 20px;
-    }
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
 
-    #hero h2 {
-      font-size: 2.8rem;
-      margin-bottom: 15px;
-      color: #121212;
-      text-shadow: 1px 1px 3px #000;
-    }
+/*===== CLASS CSS ===== */
+.section-title {
+  position: relative;
+  font-size: var(--h2-font-size);
+  color: var(--first-color);
+  margin-top: var(--mb-2);
+  margin-bottom: var(--mb-4);
+  text-align: center;
+}
+.section-title::after {
+  position: absolute;
+  content: "";
+  width: 64px;
+  height: 0.18rem;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: 2rem;
+  background-color: var(--first-color);
+}
 
-    #hero p {
-      font-size: 1.3rem;
-      max-width: 600px;
-      color: #222;
-      margin-bottom: 40px;
-      font-weight: 600;
-    }
+.section {
+  padding-top: 3rem;
+  padding-bottom: 2rem;
+}
 
-    /* Buttons with sliding hover effect */
-    a.btn {
-      position: relative;
-      overflow: hidden;
-      z-index: 0;
-      color: #121212;
-      background: #03dac6;
-      border-radius: 30px;
-      padding: 14px 40px;
-      font-weight: 700;
-      box-shadow: 0 5px 15px rgba(3, 218, 198, 0.5);
-      transition: color 0.4s ease;
-      display: inline-block;
-      cursor: pointer;
-      font-size: 1.1rem;
-      user-select: none;
-    }
+/*===== LAYOUT =====*/
+.bd-grid {
+  max-width: 1024px;
+  display: grid;
+  margin-left: var(--mb-2);
+  margin-right: var(--mb-2);
+}
 
-    a.btn::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(
-        90deg,
-        transparent,
-        rgba(255, 255, 255, 0.6),
-        transparent
-      );
-      transform: skewX(-20deg);
-      z-index: -1;
-    }
+.l-header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: var(--z-fixed);
+  background-color: #fff;
+  box-shadow: 0 1px 4px rgba(146, 161, 176, 0.15);
+}
 
-    a.btn:hover::before {
-      animation: slide 0.7s forwards;
-    }
+/*===== NAV =====*/
+.nav {
+  height: var(--header-height);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: var(--font-semi);
+}
+@media screen and (max-width: 767px) {
+  .nav__menu {
+    position: fixed;
+    top: var(--header-height);
+    right: -100%;
+    width: 80%;
+    height: 100%;
+    padding: 2rem;
+    background-color: var(--second-color);
+    transition: 0.5s;
+  }
+}
+.nav__item {
+  margin-bottom: var(--mb-4);
+}
+.nav__link {
+  position: relative;
+  color: #fff;
+}
+.nav__link:hover {
+  position: relative;
+}
+.nav__link:hover::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 0.18rem;
+  left: 0;
+  top: 2rem;
+  background-color: var(--first-color);
+}
+.nav__logo {
+  color: var(--second-color);
+}
+.nav__toggle {
+  color: var(--second-color);
+  font-size: 1.5rem;
+  cursor: pointer;
+}
 
-    @keyframes slide {
-      to {
-        left: 100%;
-      }
-    }
+/*Active menu*/
+.active-link::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 0.18rem;
+  left: 0;
+  top: 2rem;
+  background-color: var(--first-color);
+}
 
-    a.btn:hover {
-      color: #fff;
-    }
+/*=== Show menu ===*/
+.show {
+  right: 0;
+}
 
-    /* Section Titles */
-    section h2 {
-      font-size: 2.6rem;
-      color: #03dac6;
-      margin-bottom: 40px;
-      text-align: center;
-      letter-spacing: 1px;
-    }
+/*===== HOME =====*/
+.home {
+  position: relative;
+  row-gap: 5rem;
+  padding: 4rem 0 5rem;
+}
+.home__data {
+  align-self: center;
+}
+.home__title {
+  font-size: var(--big-font-size);
+  margin-bottom: var(--mb-5);
+}
+.home__title-color {
+  color: var(--first-color);
+}
+.home__social {
+  display: flex;
+  flex-direction: column;
+}
+.home__social-icon {
+  width: max-content;
+  margin-bottom: var(--mb-2);
+  font-size: 1.5rem;
+  color: var(--second-color);
+}
+.home__social-icon:hover {
+  color: var(--first-color);
+}
+.home__img {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 260px;
+}
+.home__blob {
+  fill: var(--first-color);
+}
+.home__blob-img {
+  width: 360px;
+}
 
-    /* About Section */
-    #about {
-      background: #181818;
-      padding: 80px 0;
-      font-size: 1.15rem;
-      max-width: 900px;
-      margin: auto;
-      line-height: 1.7;
-    }
+/*BUTTONS*/
+.button {
+  display: inline-block;
+  background-color: var(--first-color);
+  color: #fff;
+  padding: 0.75rem 2.5rem;
+  font-weight: var(--font-semi);
+  border-radius: 0.5rem;
+  transition: 0.3s;
+}
+.button:hover {
+  box-shadow: 0px 10px 36px rgba(0, 0, 0, 0.15);
+}
 
-    #about p {
-      margin-bottom: 25px;
-    }
+/* ===== ABOUT =====*/
+.about__container {
+  row-gap: 2rem;
+  text-align: center;
+}
+.about__subtitle {
+  margin-bottom: var(--mb-2);
+}
+.about__img {
+  justify-self: center;
+}
+.about__img img {
+  width: 200px;
+  border-radius: 0.5rem;
+}
 
-    /* Projects Section */
-    #projects {
-      padding: 80px 0;
-      max-width: 1100px;
-      margin: auto;
-    }
+/* ===== SKILLS =====*/
+.skills__container {
+  row-gap: 2rem;
+  text-align: center;
+}
+.skills__subtitle {
+  margin-bottom: var(--mb-2);
+}
+.skills__text {
+  margin-bottom: var(--mb-4);
+}
+.skills__data {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  font-weight: var(--font-semi);
+  padding: 0.5rem 1rem;
+  margin-bottom: var(--mb-4);
+  border-radius: 0.5rem;
+  box-shadow: 0px 4px 25px rgba(14, 36, 49, 0.15);
+}
+.skills__icon {
+  font-size: 2rem;
+  margin-right: var(--mb-2);
+  color: var(--first-color);
+}
+.skills__names {
+  display: flex;
+  align-items: center;
+}
+.skills__bar {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background-color: var(--first-color);
+  height: 0.25rem;
+  border-radius: 0.5rem;
+  z-index: var(--z-back);
+}
+.skills__html {
+  width: 95%;
+}
+.skills__css {
+  width: 85%;
+}
+.skills__js {
+  width: 65%;
+}
+.skills__ux {
+  width: 85%;
+}
+.skills__img {
+  border-radius: 0.5rem;
+}
 
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
-      gap: 30px;
-    }
+/* ===== WORK =====*/
+.work__container {
+  row-gap: 2rem;
+}
+.work__img {
+  box-shadow: 0px 4px 25px rgba(14, 36, 49, 0.15);
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+.work__img img {
+  transition: 1s;
+}
+.work__img img:hover {
+  transform: scale(1.1);
+}
 
-    .project-card {
-      background: #222;
-      border-radius: 15px;
-      box-shadow: 0 10px 25px rgba(3, 218, 198, 0.3);
-      overflow: hidden;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      cursor: pointer;
-    }
+/* ===== CONTACT =====*/
+.contact__input {
+  width: 100%;
+  font-size: var(--normal-font-size);
+  font-weight: var(--font-semi);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border: 1.5px solid var(--second-color);
+  outline: none;
+  margin-bottom: var(--mb-4);
+}
+.contact__button {
+  display: block;
+  border: none;
+  outline: none;
+  font-size: var(--normal-font-size);
+  cursor: pointer;
+  margin-left: auto;
+}
 
-    .project-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 20px 40px rgba(3, 218, 198, 0.7);
-    }
+/* ===== FOOTER =====*/
+.footer {
+  background-color: var(--second-color);
+  color: #fff;
+  text-align: center;
+  font-weight: var(--font-semi);
+  padding: 2rem 0;
+}
+.footer__title {
+  font-size: 2rem;
+  margin-bottom: var(--mb-4);
+}
+.footer__social {
+  margin-bottom: var(--mb-4);
+}
+.footer__icon {
+  font-size: 1.5rem;
+  color: #fff;
+  margin: 0 var(--mb-2);
+}
+.footer__copy {
+  font-size: var(--smaller-font-size);
+}
 
-    .project-card img {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-      border-bottom: 3px solid #03dac6;
-      transition: transform 0.5s ease;
-    }
-
-    .project-card:hover img {
-      transform: scale(1.1);
-    }
-
-    .project-content {
-      padding: 20px;
-    }
-
-    .project-content h3 {
-      color: #03dac6;
-      margin-bottom: 10px;
-      font-weight: 700;
-    }
-
-    .project-content p {
-      font-size: 0.95rem;
-      color: #bbb;
-      line-height: 1.5;
-    }
-
-    /* Skills Section */
-    #skills {
-      background:#181818;
-      padding:100px 50px;
-      color:#ddd;
-      max-width: 900px;
-      margin: 0 auto 100px;
-    }
-
-    #skills label {
-      display: block;
-      margin-bottom: 8px;
-      font-weight: 600;
-    }
-
-    .skill-bar {
-      background:#222;
-      border-radius:10px;
-      overflow:hidden;
-      margin-bottom: 30px;
-    }
-
-    .skill-progress {
-      height: 15px;
-      border-radius: 10px;
-      background: #03dac6;
-      width: 0;
-      animation-fill-mode: forwards;
-    }
-
-    /* Animations for skill bars */
-    .html { animation: progressHtml 2s ease forwards; }
-    .js { animation: progressJs 2s ease forwards 0.3s; }
-    .react { animation: progressReact 2s ease forwards 0.6s; }
-    .node { animation: progressNode 2s ease forwards 0.9s; }
-
-    @keyframes progressHtml {
-      to { width: 90%; }
-    }
-
-    @keyframes progressJs {
-      to { width: 80%; }
-    }
-
-    @keyframes progressReact {
-      to { width: 70%; }
-    }
-
-    @keyframes progressNode {
-      to { width: 65%; }
-    }
-
-    /* Testimonials Section */
-    #testimonials {
-      padding: 100px 50px;
-      background:#121212;
-      color:#ddd;
-      text-align:center;
-    }
-
-    .testimonials-container {
-      max-width: 900px;
-      margin: 0 auto;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 30px;
-      justify-content: center;
-    }
-
-    .testimonial {
-      background:#222;
-      border-radius: 15px;
-      padding: 30px;
-      width: 280px;
-      box-shadow: 0 5px 15px rgba(3,218,198,0.3);
-      opacity: 0;
-      transform: translateY(40px);
-      animation: slideIn 1s ease forwards;
-      cursor: default;
-    }
-
-    .testimonial:nth-child(2) {
-      animation-delay: 0.3s;
-    }
-
-    .testimonial:nth-child(3) {
-      animation-delay: 0.6s;
-    }
-
-    .testimonial p {
-      font-style: italic;
-      margin-bottom: 15px;
-      font-size: 1.05rem;
-    }
-
-    .testimonial h4 {
-      color: #03dac6;
-      font-weight: 700;
-    }
-
-    /* Blog Section */
-    #blog {
-      background:#181818;
-      padding:100px 50px;
-      color:#ddd;
-      max-width: 1200px;
-      margin: 0 auto 100px;
-    }
-
-    .blog-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
-      gap: 30px;
-    }
-
-    .blog-post {
-      background:#222;
-      border-radius: 15px;
-      overflow: hidden;
-      box-shadow: 0 5px 15px rgba(3,218,198,0.3);
-      transition: transform 0.3s ease;
-      cursor: pointer;
-    }
-
-    .blog-post:hover {
-      transform: scale(1.05);
-      box-shadow: 0 15px 30px rgba(3,218,198,0.7);
-    }
-
-    .blog-post img {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-    }
-
-    .blog-content {
-      padding: 20px;
-    }
-
-    .blog-content h3 {
-      color: #03dac6;
-      margin-bottom: 10px;
-    }
-
-    .blog-content p {
-      color: #bbb;
-      font-size: 1rem;
-      line-height: 1.4;
-    }
-
-    /* Contact Section */
-    #contact {
-      padding: 80px 50px;
-      text-align: center;
-      background: #121212;
-      color: #ddd;
-      max-width: 700px;
-      margin: 0 auto 60px;
-    }
-
-    #contact h2 {
-      margin-bottom: 40px;
-    }
-
-    #contact p {
-      margin-bottom: 30px;
-      font-size: 1.15rem;
-    }
-
-    /* Footer */
-    footer {
-      background: #181818;
-      color: #888;
-      text-align: center;
-      padding: 30px 20px;
-      border-top: 1px solid #333;
-      font-size: 0.9rem;
-    }
-
-    /* Animations */
-    @keyframes slideIn {
-      from {
-        opacity: 0;
-        transform: translateY(40px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    /* Responsive */
-    @media (max-width: 768px) {
-      nav ul {
-        flex-direction: column;
-        gap: 15px;
-      }
-
-      #hero h2 {
-        font-size: 2rem;
-      }
-
-      #hero p {
-        font-size: 1.1rem;
-      }
-
-      #skills, #testimonials, #blog {
-        padding: 50px 20px;
-      }
-    }
-
-  </style>
+/* ===== MEDIA QUERIES=====*/
+@media screen and (max-width: 320px) {
+  .home {
+    row-gap: 2rem;
+  }
+  .home__img {
+    width: 200px;
+  }
+}
+@media screen and (min-width: 576px) {
+  .home {
+    padding: 4rem 0 2rem;
+  }
+  .home__social {
+    padding-top: 0;
+    padding-bottom: 2.5rem;
+    flex-direction: row;
+    align-self: flex-end;
+  }
+  .home__social-icon {
+    margin-bottom: 0;
+    margin-right: var(--mb-4);
+  }
+  .home__img {
+    width: 300px;
+    bottom: 25%;
+  }
+  .about__container {
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    text-align: initial;
+  }
+  .skills__container {
+    grid-template-columns: 0.7fr;
+    justify-content: center;
+    column-gap: 1rem;
+  }
+  .work__container {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 2rem;
+    padding-top: 2rem;
+  }
+  .contact__form {
+    width: 360px;
+    padding-top: 2rem;
+  }
+  .contact__container {
+    justify-items: center;
+  }
+}
+@media screen and (min-width: 768px) {
+  body {
+    margin: 0;
+  }
+  .section {
+    padding-top: 4rem;
+    padding-bottom: 3rem;
+  }
+  .section-title {
+    margin-bottom: var(--mb-6);
+  }
+  .section-title::after {
+    width: 80px;
+    top: 3rem;
+  }
+  .nav {
+    height: calc(var(--header-height) + 1.5rem);
+  }
+  .nav__list {
+    display: flex;
+    padding-top: 0;
+  }
+  .nav__item {
+    margin-left: var(--mb-6);
+    margin-bottom: 0;
+  }
+  .nav__toggle {
+    display: none;
+  }
+  .nav__link {
+    color: var(--second-color);
+  }
+  .home {
+    padding: 8rem 0 2rem;
+  }
+  .home__img {
+    width: 400px;
+    bottom: 10%;
+  }
+  .about__container {
+    padding-top: 2rem;
+  }
+  .about__img img {
+    width: 300px;
+  }
+  .skills__container {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 2rem;
+    align-items: center;
+    text-align: initial;
+  }
+  .work__container {
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 2rem;
+  }
+}
+@media screen and (min-width: 992px) {
+  .bd-grid {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .home {
+    padding: 10rem 0 2rem;
+  }
+  .home__img {
+    width: 450px;
+  }
+}
+</style>
 </head>
 <body>
-  <header>
-    <h1>Rakshit Singh</h1>
-    <nav>
-      <ul>
-        <li><a href="#hero">Home</a></li>
-        <li><a href="#about">About Me</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#testimonials">Testimonials</a></li>
-        <li><a href="#blog">Blog</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
 
-  <!-- Hero Section -->
-  <section id="hero">
-    <h2>Hello, I'm Rakshit Singh</h2>
-    <p>A passionate web developer &amp; programmer creating modern and responsive websites with cool animations and UI effects.</p>
-    <a href="#projects" class="btn">See My Work</a>
-  </section>
+    <!-- HEADER -->
+    <header class="l-header">
+        <nav class="nav bd-grid">
+            <div>
+                <a href="#" class="nav__logo">Rakshit Singh</a>
+            </div>
 
-  <!-- About Section -->
-  <section id="about" class="container">
-    <h2>About Me</h2>
-    <p>
-      Main Rakshit Singh hoon, ek passionate web developer jo modern technologies jaise HTML, CSS, JavaScript, React aur Node.js use karta hoon. Mere projects clean, responsive aur user-friendly design ke sath hote hain.
-    </p>
-    <p>
-      Mera goal hai ki main aisi websites aur apps banao jo users ko best experience de aur business goals ko achieve karne me madad kare.
-    </p>
-  </section>
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="#home" class="nav__link active-link">Home</a></li>
+                    <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
+                    <li class="nav__item"><a href="#skills" class="nav__link">Skills</a></li>
+                    <li class="nav__item"><a href="#work" class="nav__link">Work</a></li>
+                    <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
+                </ul>
+            </div>
 
-  <!-- Projects Section -->
-  <section id="projects" class="container">
-    <h2>Projects</h2>
-    <div class="projects-grid">
-      <div class="project-card">
-        <img src="https://picsum.photos/id/1015/400/180" alt="Project 1" />
-        <div class="project-content">
-          <h3>Portfolio Website</h3>
-          <p>Ek animated aur responsive portfolio website jo aapke projects ko showcase karti hai.</p>
-        </div>
-      </div>
+            <div class="nav__toggle" id="nav-toggle">
+                <i class='bx bx-menu'></i>
+            </div>
+        </nav>
+    </header>
 
-      <div class="project-card">
-        <img src="https://picsum.photos/id/1021/400/180" alt="Project 2" />
-        <div class="project-content">
-          <h3>E-commerce Website</h3>
-          <p>Simple e-commerce platform jisme products dikhaye gaye hain, cart aur checkout system bhi hai.</p>
-        </div>
-      </div>
+    <main class="l-main">
+        <!-- HOME -->
+        <section class="home bd-grid" id="home">
+            <div class="home__data">
+                <h1 class="home__title">Hi,<br>I'm <span class="home__title-color">Rakshit Singh</span><br> Software Developer & Quant Trader</h1>
+                <a href="#contact" class="button">Contact Me</a>
+            </div>
 
-      <div class="project-card">
-        <img src="https://picsum.photos/id/1044/400/180" alt="Project 3" />
-        <div class="project-content">
-          <h3>Blog Platform</h3>
-          <p>Ek modern blogging platform jisme users articles likh aur padh sakte hain.</p>
-        </div>
-      </div>
+            <div class="home__social">
+                <a href="https://www.linkedin.com/in/rakshit-singh-045974268/" class="home__social-icon"><i class='bx bxl-linkedin'></i></a>
+                <a href="https://github.com/rakshitsinghh" class="home__social-icon"><i class='bx bxl-github'></i></a>
+            </div>
 
-      <div class="project-card">
-        <img src="https://picsum.photos/id/1050/400/180" alt="Project 4" />
-        <div class="project-content">
-          <h3>Weather App</h3>
-          <p>Real-time weather updates dikhane wali app with beautiful UI and smooth transitions.</p>
-        </div>
-      </div>
+            <div class="home__img">
+                <img src="assets/img/profile.jpg" alt="Profile Picture">
+            </div>
+        </section>
 
-      <div class="project-card">
-        <img src="https://picsum.photos/id/1062/400/180" alt="Project 5" />
-        <div class="project-content">
-          <h3>Task Manager</h3>
-          <p>Simple task manager app jisme tasks add, edit aur delete kar sakte hain.</p>
-        </div>
-      </div>
+        <!-- ABOUT -->
+        <section class="about section" id="about">
+            <h2 class="section-title">About Me</h2>
+            <div class="about__container bd-grid">
+                <div class="about__img">
+                    <img src="assets/img/about.jpg" alt="">
+                </div>
+                <div>
+                    <h2 class="about__subtitle">I'm Rakshit Singh</h2>
+                    <p class="about__text">
+                        A passionate **software developer** specializing in **quant trading**, **data science**, **marketing**, and **brand building**.  
+                        I focus on **building first** and learning while developing necessary things.  
+                        My interest in **economy, finance, and human psychology** has led me to study books like **"Wealth of Nations"** and **"The Psychology of Money"**.
+                    </p>  
+                </div>                                   
+            </div>
+        </section>
 
-      <div class="project-card">
-        <img src="https://picsum.photos/id/1069/400/180" alt="Project 6" />
-        <div class="project-content">
-          <h3>Chat App</h3>
-          <p>Real-time chat application with user authentication and responsive UI.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+        <!-- SKILLS -->
+        <section class="skills section" id="skills">
+            <h2 class="section-title">Skills</h2>
+            <div class="skills__container bd-grid">          
+                <div>
+                    <h2 class="skills__subtitle">Technical Skills</h2>
+                    <div class="skills__data">
+                        <div class="skills__names">
+                            <i class='bx bxl-python skills__icon'></i>
+                            <span class="skills__name">Python & Algorithmic Trading (90%)</span>
+                        </div>
+                        <div class="skills__bar skills__python"></div>
+                    </div>
 
-  <!-- Skills Section -->
-  <section id="skills">
-    <h2>My Skills</h2>
+                    <div class="skills__data">
+                        <div class="skills__names">
+                            <i class='bx bxl-html5 skills__icon'></i>
+                            <span class="skills__name">HTML & CSS (75%)</span>
+                        </div>
+                        <div class="skills__bar skills__html"></div>
+                    </div>
 
-    <label for="html">HTML &amp; CSS</label>
-    <div class="skill-bar">
-      <div class="skill-progress html"></div>
-    </div>
+                    <div class="skills__data">
+                        <div class="skills__names">
+                            <i class='bx bx-bot skills__icon'></i>
+                            <span class="skills__name">Prompt Engineering (85%)</span>
+                        </div>
+                        <div class="skills__bar skills__prompt"></div>
+                    </div>
+                </div>
+                
+                <div>              
+                    <img src="assets/img/skills.jpg" alt="" class="skills__img">
+                </div>
+            </div>
+        </section>
 
-    <label for="js">JavaScript</label>
-    <div class="skill-bar">
-      <div class="skill-progress js"></div>
-    </div>
+        <!-- WORK -->
+        <section class="work section" id="work">
+            <h2 class="section-title">Projects</h2>
+            <div class="work__container bd-grid">
+                <div class="work__img">
+                    <img src="assets/img/netflix_clone.jpg" alt="Netflix Clone">
+                    <p>Netflix Clone</p>
+                </div>
+                <div class="work__img">
+                    <img src="assets/img/trading_bot.jpg" alt="Trading Bot">
+                    <p>Trading Bot</p>
+                </div>
+                <div class="work__img">
+                    <img src="assets/img/blinkit_app.jpg" alt="Blinkit Hyperlocal App">
+                    <p>Blinkit Hyperlocal App</p>
+                </div>
+                <div class="work__img">
+                    <img src="assets/img/chat_app.jpg" alt="Web Chat App">
+                    <p>Web Chat App</p>
+                </div>
+                <div class="work__img">
+                    <img src="assets/img/sepa_system.jpg" alt="SEPA-like System">
+                    <p>SEPA-like Trading System</p>
+                </div>
+            </div>
+        </section>
 
-    <label for="react">React</label>
-    <div class="skill-bar">
-      <div class="skill-progress react"></div>
-    </div>
+        <!-- CONTACT -->
+        <section class="contact section" id="contact">
+            <h2 class="section-title">Contact Me</h2>
+            <div class="contact__container bd-grid">
+                <p>Email: <a href="mailto:rakshitsingh.jalal1202@gmail.com">rakshitsingh.jalal1202@gmail.com</a></p>
+                <p>GitHub: <a href="https://github.com/rakshitsinghh" target="_blank">github.com/rakshitsinghh</a></p>
+                <p>LinkedIn: <a href="https://www.linkedin.com/in/rakshit-singh-045974268/" target="_blank">linkedin.com/in/rakshit-singh</a></p>
+            </div>
+        </section>
+    </main>
 
-    <label for="node">Node.js</label>
-    <div class="skill-bar">
-      <div class="skill-progress node"></div>
-    </div>
-  </section>
-
-  <!-- Testimonials Section -->
-  <section id="testimonials">
-    <h2>What People Say</h2>
-    <div class="testimonials-container">
-      <div class="testimonial">
-        <p>"Rakshit is a highly skilled developer. He delivered my project on time with amazing quality."</p>
-        <h4>- Aman Kumar</h4>
-      </div>
-
-      <div class="testimonial">
-        <p>"His creativity and attention to detail made my website stand out."</p>
-        <h4>- Priya Singh</h4>
-      </div>
-
-      <div class="testimonial">
-        <p>"Professional, dedicated, and easy to work with. Highly recommended!"</p>
-        <h4>- Rohit Sharma</h4>
-      </div>
-    </div>
-  </section>
-
-  <!-- Blog Section -->
-  <section id="blog">
-    <h2>From My Blog</h2>
-    <div class="blog-grid">
-      <article class="blog-post">
-        <img src="https://picsum.photos/id/1074/400/250" alt="Blog 1" />
-        <div class="blog-content">
-          <h3>How to Build a Responsive Website</h3>
-          <p>Learn tips and tricks to create responsive designs that look perfect on all devices.</p>
-        </div>
-      </article>
-
-      <article class="blog-post">
-        <img src="https://picsum.photos/id/1081/400/250" alt="Blog 2" />
-        <div class="blog-content">
-          <h3>JavaScript Best Practices</h3>
-          <p>Discover the most efficient ways to write clean and maintainable JavaScript code.</p>
-        </div>
-      </article>
-
-      <article class="blog-post">
-        <img src="https://picsum.photos/id/1069/400/250" alt="Blog 3" />
-        <div class="blog-content">
-          <h3>CSS Animations to Wow Your Users</h3>
-          <p>Bring life to your websites with these easy-to-implement CSS animations.</p>
-        </div>
-      </article>
-    </div>
-  </section>
-
-  <!-- Contact Section -->
-  <section id="contact">
-    <h2>Contact Me</h2>
-    <p>Feel free to reach out for collaborations, freelance work, or just to say hi!</p>
-    <a href="mailto:rakshitsingh@example.com" class="btn">Email Me</a>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 Rakshit Singh. All rights reserved.</p>
-  </footer>
+    <script src="assets/js/main.js"></script>
 
 </body>
 </html>

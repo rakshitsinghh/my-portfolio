@@ -3,507 +3,595 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rakshit Singh - Portfolio</title>
+    <title>Rakshit Singh | Quant Developer & Trader</title>
 
-    <link rel="stylesheet" href="assets/css/styles.css">
     <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
-<style>
+    
+    <style>
+        /*===== GOOGLE FONTS =====*/
+        @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap");
 
-  /*===== GOOGLE FONTS =====*/
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
-/*===== VARIABLES CSS =====*/
-:root {
-  --header-height: 3rem;
-  --font-semi: 600;
-  /*===== Colores =====*/
-  /*Purple 260 - Red 355 - Blue 224 - Pink 340*/
-  /* HSL color mode */
-  --hue-color: 224;
-  --first-color: hsl(var(--hue-color), 89%, 60%);
-  --second-color: hsl(var(--hue-color), 56%, 12%);
-  /*===== Fuente y tipografia =====*/
-  --body-font: "Poppins", sans-serif;
-  --big-font-size: 2rem;
-  --h2-font-size: 1.25rem;
-  --normal-font-size: .938rem;
-  --smaller-font-size: .75rem;
-  /*===== Margenes =====*/
-  --mb-2: 1rem;
-  --mb-4: 2rem;
-  --mb-5: 2.5rem;
-  --mb-6: 3rem;
-  /*===== z index =====*/
-  --z-back: -10;
-  --z-fixed: 100;
-}
-@media screen and (min-width: 968px) {
-  :root {
-    --big-font-size: 3.5rem;
-    --h2-font-size: 2rem;
-    --normal-font-size: 1rem;
-    --smaller-font-size: .875rem;
-  }
-}
+        /*===== VARIABLES CSS =====*/
+        :root {
+            --header-height: 3.5rem;
+            --font-semi: 600;
+            --font-bold: 800;
 
-/*===== BASE =====*/
-*, ::before, ::after {
-  box-sizing: border-box;
-}
+            /* NEW MODERN PALETTE */
+            --hue-color: 224; /* Base blue hue is kept for secondary color */
+            --primary-color: #FF5722; /* Vibrant Orange/Red */
+            --secondary-color: #1A1A2E; /* Deep Navy Background */
+            --text-color: #F8F8F8; /* Light Text */
+            --text-light: #AAAAAA; /* Lighter text for context */
+            --bg-color-light: #2A2A4A; /* Slightly lighter background for sections */
 
-html {
-  scroll-behavior: smooth;
-}
+            /*===== Typography & Spacing =====*/
+            --big-font-size: 2.5rem;
+            --h1-font-size: 1.5rem;
+            --h2-font-size: 1.25rem;
+            --normal-font-size: 1rem;
+            --small-font-size: .875rem;
 
-body {
-  margin: var(--header-height) 0 0 0;
-  font-family: var(--body-font);
-  font-size: var(--normal-font-size);
-  color: var(--second-color);
-}
+            --mb-1: 0.5rem;
+            --mb-2: 1rem;
+            --mb-4: 2rem;
+            --mb-6: 3rem;
+            
+            /*===== z index =====*/
+            --z-back: -10;
+            --z-fixed: 100;
+        }
 
-h1, h2, p {
-  margin: 0;
-}
+        @media screen and (min-width: 968px) {
+            :root {
+                --big-font-size: 4rem;
+                --h1-font-size: 2rem;
+                --h2-font-size: 1.5rem;
+                --normal-font-size: 1.1rem;
+            }
+        }
 
-ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
+        /*===== BASE =====*/
+        *, ::before, ::after {
+            box-sizing: border-box;
+        }
 
-a {
-  text-decoration: none;
-}
+        html {
+            scroll-behavior: smooth;
+        }
 
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
+        body {
+            margin: var(--header-height) 0 0 0;
+            font-family: var(--body-font);
+            font-size: var(--normal-font-size);
+            color: var(--text-color);
+            background-color: var(--secondary-color); /* Deep Navy Background */
+            line-height: 1.6;
+        }
 
-/*===== CLASS CSS ===== */
-.section-title {
-  position: relative;
-  font-size: var(--h2-font-size);
-  color: var(--first-color);
-  margin-top: var(--mb-2);
-  margin-bottom: var(--mb-4);
-  text-align: center;
-}
-.section-title::after {
-  position: absolute;
-  content: "";
-  width: 64px;
-  height: 0.18rem;
-  left: 0;
-  right: 0;
-  margin: auto;
-  top: 2rem;
-  background-color: var(--first-color);
-}
+        h1, h2, h3, p {
+            margin: 0;
+            color: var(--text-color);
+        }
 
-.section {
-  padding-top: 3rem;
-  padding-bottom: 2rem;
-}
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
 
-/*===== LAYOUT =====*/
-.bd-grid {
-  max-width: 1024px;
-  display: grid;
-  margin-left: var(--mb-2);
-  margin-right: var(--mb-2);
-}
+        a {
+            text-decoration: none;
+            color: var(--primary-color);
+        }
+        a:hover {
+            opacity: 0.8;
+            transition: 0.3s;
+        }
 
-.l-header {
-  width: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: var(--z-fixed);
-  background-color: #fff;
-  box-shadow: 0 1px 4px rgba(146, 161, 176, 0.15);
-}
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
 
-/*===== NAV =====*/
-.nav {
-  height: var(--header-height);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-weight: var(--font-semi);
-}
-@media screen and (max-width: 767px) {
-  .nav__menu {
-    position: fixed;
-    top: var(--header-height);
-    right: -100%;
-    width: 80%;
-    height: 100%;
-    padding: 2rem;
-    background-color: var(--second-color);
-    transition: 0.5s;
-  }
-}
-.nav__item {
-  margin-bottom: var(--mb-4);
-}
-.nav__link {
-  position: relative;
-  color: #fff;
-}
-.nav__link:hover {
-  position: relative;
-}
-.nav__link:hover::after {
-  position: absolute;
-  content: "";
-  width: 100%;
-  height: 0.18rem;
-  left: 0;
-  top: 2rem;
-  background-color: var(--first-color);
-}
-.nav__logo {
-  color: var(--second-color);
-}
-.nav__toggle {
-  color: var(--second-color);
-  font-size: 1.5rem;
-  cursor: pointer;
-}
+        /*===== UTILITY CLASSES ===== */
+        .section-title {
+            position: relative;
+            font-size: var(--h1-font-size);
+            color: var(--primary-color);
+            margin-top: var(--mb-2);
+            margin-bottom: var(--mb-6);
+            text-align: center;
+            font-weight: var(--font-bold);
+            text-transform: uppercase;
+        }
 
-/*Active menu*/
-.active-link::after {
-  position: absolute;
-  content: "";
-  width: 100%;
-  height: 0.18rem;
-  left: 0;
-  top: 2rem;
-  background-color: var(--first-color);
-}
+        .section-title::after {
+            position: absolute;
+            content: "";
+            width: 80px;
+            height: 0.2rem;
+            left: 0;
+            right: 0;
+            margin: auto;
+            top: 2.5rem; /* Adjusted position */
+            background-color: var(--primary-color);
+            border-radius: 5px;
+        }
 
-/*=== Show menu ===*/
-.show {
-  right: 0;
-}
+        .section {
+            padding-top: 5rem;
+            padding-bottom: 4rem;
+            background-color: var(--secondary-color);
+            transition: background-color 0.3s;
+        }
+        .section:nth-child(even) {
+            background-color: var(--bg-color-light); /* Light alternate background */
+        }
 
-/*===== HOME =====*/
-.home {
-  position: relative;
-  row-gap: 5rem;
-  padding: 4rem 0 5rem;
-}
-.home__data {
-  align-self: center;
-}
-.home__title {
-  font-size: var(--big-font-size);
-  margin-bottom: var(--mb-5);
-}
-.home__title-color {
-  color: var(--first-color);
-}
-.home__social {
-  display: flex;
-  flex-direction: column;
-}
-.home__social-icon {
-  width: max-content;
-  margin-bottom: var(--mb-2);
-  font-size: 1.5rem;
-  color: var(--second-color);
-}
-.home__social-icon:hover {
-  color: var(--first-color);
-}
-.home__img {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  width: 260px;
-}
-.home__blob {
-  fill: var(--first-color);
-}
-.home__blob-img {
-  width: 360px;
-}
+        /*===== LAYOUT =====*/
+        .bd-grid {
+            max-width: 1200px;
+            display: grid;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 0 var(--mb-4);
+        }
 
-/*BUTTONS*/
-.button {
-  display: inline-block;
-  background-color: var(--first-color);
-  color: #fff;
-  padding: 0.75rem 2.5rem;
-  font-weight: var(--font-semi);
-  border-radius: 0.5rem;
-  transition: 0.3s;
-}
-.button:hover {
-  box-shadow: 0px 10px 36px rgba(0, 0, 0, 0.15);
-}
+        .l-header {
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: var(--z-fixed);
+            background-color: var(--secondary-color);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5); /* Darker shadow */
+        }
 
-/* ===== ABOUT =====*/
-.about__container {
-  row-gap: 2rem;
-  text-align: center;
-}
-.about__subtitle {
-  margin-bottom: var(--mb-2);
-}
-.about__img {
-  justify-self: center;
-}
-.about__img img {
-  width: 200px;
-  border-radius: 0.5rem;
-}
+        /*===== NAV =====*/
+        .nav {
+            height: var(--header-height);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: var(--font-semi);
+        }
 
-/* ===== SKILLS =====*/
-.skills__container {
-  row-gap: 2rem;
-  text-align: center;
-}
-.skills__subtitle {
-  margin-bottom: var(--mb-2);
-}
-.skills__text {
-  margin-bottom: var(--mb-4);
-}
-.skills__data {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: relative;
-  font-weight: var(--font-semi);
-  padding: 0.5rem 1rem;
-  margin-bottom: var(--mb-4);
-  border-radius: 0.5rem;
-  box-shadow: 0px 4px 25px rgba(14, 36, 49, 0.15);
-}
-.skills__icon {
-  font-size: 2rem;
-  margin-right: var(--mb-2);
-  color: var(--first-color);
-}
-.skills__names {
-  display: flex;
-  align-items: center;
-}
-.skills__bar {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  background-color: var(--first-color);
-  height: 0.25rem;
-  border-radius: 0.5rem;
-  z-index: var(--z-back);
-}
-.skills__html {
-  width: 95%;
-}
-.skills__css {
-  width: 85%;
-}
-.skills__js {
-  width: 65%;
-}
-.skills__ux {
-  width: 85%;
-}
-.skills__img {
-  border-radius: 0.5rem;
-}
+        @media screen and (max-width: 767px) {
+            .nav__menu {
+                position: fixed;
+                top: var(--header-height);
+                right: -100%;
+                width: 70%;
+                height: 100%;
+                padding: 2rem;
+                background-color: var(--bg-color-light);
+                transition: 0.4s;
+                box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+            }
+        }
 
-/* ===== WORK =====*/
-.work__container {
-  row-gap: 2rem;
-}
-.work__img {
-  box-shadow: 0px 4px 25px rgba(14, 36, 49, 0.15);
-  border-radius: 0.5rem;
-  overflow: hidden;
-}
-.work__img img {
-  transition: 1s;
-}
-.work__img img:hover {
-  transform: scale(1.1);
-}
+        .nav__item {
+            margin-bottom: var(--mb-4);
+        }
 
-/* ===== CONTACT =====*/
-.contact__input {
-  width: 100%;
-  font-size: var(--normal-font-size);
-  font-weight: var(--font-semi);
-  padding: 1rem;
-  border-radius: 0.5rem;
-  border: 1.5px solid var(--second-color);
-  outline: none;
-  margin-bottom: var(--mb-4);
-}
-.contact__button {
-  display: block;
-  border: none;
-  outline: none;
-  font-size: var(--normal-font-size);
-  cursor: pointer;
-  margin-left: auto;
-}
+        .nav__link {
+            color: var(--text-color);
+            transition: color 0.3s;
+            position: relative;
+            font-size: var(--normal-font-size);
+        }
 
-/* ===== FOOTER =====*/
-.footer {
-  background-color: var(--second-color);
-  color: #fff;
-  text-align: center;
-  font-weight: var(--font-semi);
-  padding: 2rem 0;
-}
-.footer__title {
-  font-size: 2rem;
-  margin-bottom: var(--mb-4);
-}
-.footer__social {
-  margin-bottom: var(--mb-4);
-}
-.footer__icon {
-  font-size: 1.5rem;
-  color: #fff;
-  margin: 0 var(--mb-2);
-}
-.footer__copy {
-  font-size: var(--smaller-font-size);
-}
+        .nav__link:hover {
+            color: var(--primary-color);
+            opacity: 1; /* Override default a:hover opacity */
+        }
 
-/* ===== MEDIA QUERIES=====*/
-@media screen and (max-width: 320px) {
-  .home {
-    row-gap: 2rem;
-  }
-  .home__img {
-    width: 200px;
-  }
-}
-@media screen and (min-width: 576px) {
-  .home {
-    padding: 4rem 0 2rem;
-  }
-  .home__social {
-    padding-top: 0;
-    padding-bottom: 2.5rem;
-    flex-direction: row;
-    align-self: flex-end;
-  }
-  .home__social-icon {
-    margin-bottom: 0;
-    margin-right: var(--mb-4);
-  }
-  .home__img {
-    width: 300px;
-    bottom: 25%;
-  }
-  .about__container {
-    grid-template-columns: repeat(2, 1fr);
-    align-items: center;
-    text-align: initial;
-  }
-  .skills__container {
-    grid-template-columns: 0.7fr;
-    justify-content: center;
-    column-gap: 1rem;
-  }
-  .work__container {
-    grid-template-columns: repeat(2, 1fr);
-    column-gap: 2rem;
-    padding-top: 2rem;
-  }
-  .contact__form {
-    width: 360px;
-    padding-top: 2rem;
-  }
-  .contact__container {
-    justify-items: center;
-  }
-}
-@media screen and (min-width: 768px) {
-  body {
-    margin: 0;
-  }
-  .section {
-    padding-top: 4rem;
-    padding-bottom: 3rem;
-  }
-  .section-title {
-    margin-bottom: var(--mb-6);
-  }
-  .section-title::after {
-    width: 80px;
-    top: 3rem;
-  }
-  .nav {
-    height: calc(var(--header-height) + 1.5rem);
-  }
-  .nav__list {
-    display: flex;
-    padding-top: 0;
-  }
-  .nav__item {
-    margin-left: var(--mb-6);
-    margin-bottom: 0;
-  }
-  .nav__toggle {
-    display: none;
-  }
-  .nav__link {
-    color: var(--second-color);
-  }
-  .home {
-    padding: 8rem 0 2rem;
-  }
-  .home__img {
-    width: 400px;
-    bottom: 10%;
-  }
-  .about__container {
-    padding-top: 2rem;
-  }
-  .about__img img {
-    width: 300px;
-  }
-  .skills__container {
-    grid-template-columns: repeat(2, 1fr);
-    column-gap: 2rem;
-    align-items: center;
-    text-align: initial;
-  }
-  .work__container {
-    grid-template-columns: repeat(3, 1fr);
-    column-gap: 2rem;
-  }
-}
-@media screen and (min-width: 992px) {
-  .bd-grid {
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .home {
-    padding: 10rem 0 2rem;
-  }
-  .home__img {
-    width: 450px;
-  }
-}
-</style>
+        .nav__logo {
+            color: var(--primary-color);
+            font-size: var(--h1-font-size);
+            font-weight: var(--font-bold);
+        }
+
+        .nav__toggle {
+            color: var(--primary-color);
+            font-size: 2rem;
+            cursor: pointer;
+        }
+
+        /*Active menu*/
+        .active-link {
+            color: var(--primary-color) !important;
+        }
+
+        .active-link::after {
+            position: absolute;
+            content: "";
+            width: 100%;
+            height: 0.15rem;
+            left: 0;
+            bottom: -5px;
+            background-color: var(--primary-color);
+            border-radius: 5px;
+        }
+        /*=== Show menu ===*/
+        .show {
+            right: 0;
+        }
+
+        /*===== HOME =====*/
+        .home {
+            row-gap: 5rem;
+            padding: 6rem 0 5rem;
+            grid-template-columns: 1fr;
+            text-align: center;
+        }
+
+        .home__data {
+            align-self: center;
+        }
+
+        .home__title {
+            font-size: var(--big-font-size);
+            margin-bottom: var(--mb-4);
+            font-weight: var(--font-bold);
+        }
+
+        .home__title-color {
+            color: var(--primary-color);
+            display: block; /* Newline for better title flow */
+        }
+
+        .home__social {
+            display: flex;
+            justify-content: center;
+            margin-top: var(--mb-4);
+        }
+
+        .home__social-icon {
+            font-size: 2rem;
+            color: var(--text-light);
+            transition: color 0.3s;
+            margin: 0 var(--mb-2);
+        }
+
+        .home__social-icon:hover {
+            color: var(--primary-color);
+        }
+
+        .home__img {
+            order: -1; /* Move image above data on mobile */
+            margin: 0 auto;
+            width: 280px;
+        }
+        
+        .home__img img {
+            border-radius: 50%;
+            border: 5px solid var(--primary-color);
+            box-shadow: 0 0 20px rgba(255, 87, 34, 0.6);
+        }
+
+
+        /*BUTTONS*/
+        .button {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: var(--secondary-color);
+            padding: 0.8rem 3rem;
+            font-weight: var(--font-semi);
+            border-radius: 0.5rem;
+            transition: 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: var(--mb-4);
+        }
+
+        .button:hover {
+            box-shadow: 0px 8px 20px rgba(255, 87, 34, 0.4);
+            transform: translateY(-2px);
+            opacity: 1;
+        }
+
+        /* ===== ABOUT =====*/
+        .about__container {
+            row-gap: 3rem;
+            text-align: center;
+        }
+
+        .about__img {
+            justify-self: center;
+        }
+
+        .about__img img {
+            width: 250px;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .about__text {
+            color: var(--text-light);
+            font-size: var(--normal-font-size);
+        }
+
+        /* ===== SKILLS =====*/
+        .skills__container {
+            row-gap: 3rem;
+            text-align: center;
+        }
+
+        .skills__subtitle {
+            font-size: var(--h2-font-size);
+            color: var(--primary-color);
+            margin-bottom: var(--mb-4);
+        }
+        
+        .skills__data {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            position: relative;
+            font-weight: var(--font-semi);
+            padding: 1rem 1.5rem;
+            margin-bottom: var(--mb-4);
+            border-radius: 0.5rem;
+            background-color: var(--secondary-color);
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+            border: 1px solid var(--bg-color-light);
+            transition: transform 0.3s;
+        }
+        .skills__data:hover {
+            transform: translateY(-5px);
+        }
+
+        .skills__names {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            justify-content: space-between;
+            margin-bottom: var(--mb-1);
+        }
+        
+        .skills__name {
+            font-size: var(--normal-font-size);
+        }
+
+        .skills__icon {
+            font-size: 1.8rem;
+            margin-right: var(--mb-2);
+            color: var(--primary-color);
+        }
+        
+        .skills__bar {
+            position: relative;
+            width: 100%;
+            height: 0.4rem;
+            background-color: var(--bg-color-light);
+            border-radius: 0.5rem;
+        }
+
+        .skills__percentage {
+            position: absolute;
+            left: 0;
+            top: 0;
+            background-color: var(--primary-color);
+            height: 100%;
+            border-radius: 0.5rem;
+            transition: width 1.5s ease-in-out;
+        }
+        
+        /* SKILL WIDTHS (Removed original fixed skills and used dynamic classes) */
+        .skills__python .skills__percentage { width: 90%; }
+        .skills__html .skills__percentage { width: 75%; }
+        .skills__prompt .skills__percentage { width: 85%; }
+        .skills__trading .skills__percentage { width: 90%; } /* Added a new class for clarity */
+
+
+        .skills__img {
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        /* ===== WORK (Projects) =====*/
+        .work__container {
+            gap: 2rem; /* Changed row-gap to gap */
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Better for responsiveness */
+            padding-top: 2rem;
+        }
+
+        .work__img {
+            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.5);
+            border-radius: 0.5rem;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .work__img img {
+            transition: transform 0.5s ease;
+            filter: brightness(0.7); /* Slightly darken image */
+        }
+
+        .work__img:hover img {
+            transform: scale(1.05);
+            filter: brightness(1.0); /* Brighten on hover */
+        }
+        
+        .work__img p {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 0.75rem;
+            background-color: rgba(0, 0, 0, 0.7);
+            text-align: center;
+            font-weight: var(--font-semi);
+            font-size: var(--small-font-size);
+            text-transform: uppercase;
+        }
+
+
+        /* ===== CONTACT =====*/
+        .contact__container {
+            row-gap: 2rem;
+            text-align: center;
+            justify-items: center;
+        }
+        
+        .contact__info a {
+            color: var(--text-color);
+            font-size: var(--normal-font-size);
+            display: block;
+            margin-bottom: var(--mb-2);
+            transition: color 0.3s;
+        }
+
+        .contact__info a:hover {
+            color: var(--primary-color);
+        }
+
+        .contact__container p {
+            color: var(--text-light);
+        }
+
+        .contact__form {
+            width: 90%;
+            max-width: 450px;
+        }
+
+        .contact__input {
+            width: 100%;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            border: 2px solid var(--primary-color);
+            outline: none;
+            margin-bottom: var(--mb-4);
+            background-color: var(--bg-color-light);
+            color: var(--text-color);
+            font-size: var(--normal-font-size);
+        }
+        
+        .contact__input::placeholder {
+            color: var(--text-light);
+        }
+
+        .contact__button {
+            margin-left: unset;
+            margin-right: unset;
+        }
+
+
+        /* ===== FOOTER =====*/
+        .footer {
+            background-color: #111122; /* Even darker shade */
+            color: var(--text-color);
+            text-align: center;
+            padding: 2.5rem 0;
+            border-top: 2px solid var(--primary-color);
+        }
+
+        .footer__title {
+            font-size: 2.5rem;
+            margin-bottom: var(--mb-4);
+            color: var(--primary-color);
+            font-weight: var(--font-bold);
+        }
+
+        .footer__social {
+            margin-bottom: var(--mb-4);
+        }
+
+        .footer__icon {
+            font-size: 2rem;
+            color: var(--text-color);
+            margin: 0 var(--mb-2);
+            transition: color 0.3s;
+        }
+
+        .footer__icon:hover {
+            color: var(--primary-color);
+        }
+
+        .footer__copy {
+            font-size: var(--small-font-size);
+            color: var(--text-light);
+        }
+
+        /* ===== MEDIA QUERIES=====*/
+        @media screen and (min-width: 768px) {
+            body {
+                margin: 0;
+            }
+            .section {
+                padding-top: 6rem;
+                padding-bottom: 5rem;
+            }
+            .nav__list {
+                display: flex;
+                padding-top: 0;
+            }
+            .nav__item {
+                margin-left: var(--mb-6);
+                margin-bottom: 0;
+            }
+            .nav__toggle {
+                display: none;
+            }
+            .home {
+                grid-template-columns: 1fr 1fr;
+                text-align: initial;
+                gap: 2rem;
+            }
+            .home__img {
+                order: 1;
+                margin: unset;
+                width: 350px;
+                align-self: flex-end;
+            }
+            .home__img img {
+                width: 100%;
+            }
+            .home__social {
+                justify-content: flex-start;
+                flex-direction: column;
+                margin-top: 0;
+            }
+            .home__social-icon {
+                margin-bottom: var(--mb-2);
+                margin-right: 0;
+                font-size: 2.5rem;
+            }
+            .about__container {
+                grid-template-columns: 1fr 2fr;
+                align-items: center;
+                text-align: initial;
+            }
+            .skills__container {
+                grid-template-columns: 1fr 1fr;
+                gap: 3rem;
+                align-items: center;
+                text-align: initial;
+            }
+            .contact__container {
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+            }
+            .contact__info {
+                text-align: left;
+            }
+            .contact__form {
+                width: 100%;
+            }
+        }
+    </style>
 </head>
 <body>
 
-    <!-- HEADER -->
     <header class="l-header">
         <nav class="nav bd-grid">
             <div>
-                <a href="#" class="nav__logo">Rakshit Singh</a>
+                <a href="#" class="nav__logo">R.S.</a>
             </div>
 
             <div class="nav__menu" id="nav-menu">
@@ -511,7 +599,7 @@ img {
                     <li class="nav__item"><a href="#home" class="nav__link active-link">Home</a></li>
                     <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
                     <li class="nav__item"><a href="#skills" class="nav__link">Skills</a></li>
-                    <li class="nav__item"><a href="#work" class="nav__link">Work</a></li>
+                    <li class="nav__item"><a href="#projects" class="nav__link">Projects</a></li>
                     <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
                 </ul>
             </div>
@@ -523,117 +611,188 @@ img {
     </header>
 
     <main class="l-main">
-        <!-- HOME -->
         <section class="home bd-grid" id="home">
             <div class="home__data">
-                <h1 class="home__title">Hi,<br>I'm <span class="home__title-color">Rakshit Singh</span><br> Software Developer & Quant Trader</h1>
-                <a href="#contact" class="button">Contact Me</a>
-            </div>
-
-            <div class="home__social">
-                <a href="https://www.linkedin.com/in/rakshit-singh-045974268/" class="home__social-icon"><i class='bx bxl-linkedin'></i></a>
-                <a href="https://github.com/rakshitsinghh" class="home__social-icon"><i class='bx bxl-github'></i></a>
+                <h3 class="home__title">Hello, I'm</h3>
+                <h1 class="home__title"><span class="home__title-color">Rakshit Singh</span></h1>
+                <h2 class="home__title-subtitle">Quant Developer & Algorithmic Trader</h2>
+                <a href="#projects" class="button">View Projects</a>
             </div>
 
             <div class="home__img">
-                <img src="assets/img/profile.jpg" alt="Profile Picture">
+                <img src="assets/img/profile.jpg" alt="Rakshit Singh Profile Picture">
+            </div>
+
+            <div class="home__social">
+                <a href="https://www.linkedin.com/in/rakshit-singh-045974268/" class="home__social-icon"><i class='bx bxl-linkedin-square'></i></a>
+                <a href="https://github.com/rakshitsinghh" class="home__social-icon"><i class='bx bxl-github'></i></a>
+                <a href="mailto:rakshitsingh.jalal1202@gmail.com" class="home__social-icon"><i class='bx bx-mail-send'></i></a>
             </div>
         </section>
 
-        <!-- ABOUT -->
         <section class="about section" id="about">
             <h2 class="section-title">About Me</h2>
             <div class="about__container bd-grid">
                 <div class="about__img">
-                    <img src="assets/img/about.jpg" alt="">
+                    <img src="assets/img/about.jpg" alt="Rakshit Singh Working">
                 </div>
                 <div>
-                    <h2 class="about__subtitle">I'm Rakshit Singh</h2>
                     <p class="about__text">
-                        A passionate **software developer** specializing in **quant trading**, **data science**, **marketing**, and **brand building**.  
-                        I focus on **building first** and learning while developing necessary things.  
-                        My interest in **economy, finance, and human psychology** has led me to study books like **"Wealth of Nations"** and **"The Psychology of Money"**.
-                    </p>  
-                </div>                                   
+                        I am a passionate **Software Developer** focused on leveraging technology to create high-impact solutions, particularly in **Algorithmic Trading** and **Data Science**.
+                        I operate with a **"build-first"** philosophy—rapidly developing proof-of-concepts and iterating based on real-world feedback.
+                        <br><br>
+                        My background also integrates deep interest in **Finance, Economics, and Human Psychology**, drawing insights from foundational texts like **"Wealth of Nations"** and **"The Psychology of Money"** to inform my trading and software design strategies. I thrive on translating complex quantitative models into robust, efficient software systems.
+                    </p>
+                    <a href="assets/docs/Rakshit_Singh_Resume.pdf" download class="button">Download Resume</a>
+                </div>
             </div>
         </section>
 
-        <!-- SKILLS -->
         <section class="skills section" id="skills">
-            <h2 class="section-title">Skills</h2>
-            <div class="skills__container bd-grid">          
+            <h2 class="section-title">Technical Expertise</h2>
+            <div class="skills__container bd-grid">
                 <div>
-                    <h2 class="skills__subtitle">Technical Skills</h2>
-                    <div class="skills__data">
+                    <h3 class="skills__subtitle">Quant & Core Development</h3>
+                    
+                    <div class="skills__data skills__trading">
                         <div class="skills__names">
                             <i class='bx bxl-python skills__icon'></i>
-                            <span class="skills__name">Python & Algorithmic Trading (90%)</span>
+                            <span class="skills__name">Python & Algorithmic Trading</span>
+                            <span class="skills__name">90%</span>
                         </div>
-                        <div class="skills__bar skills__python"></div>
+                        <div class="skills__bar"><div class="skills__percentage"></div></div>
                     </div>
 
-                    <div class="skills__data">
+                    <div class="skills__data skills__html">
                         <div class="skills__names">
                             <i class='bx bxl-html5 skills__icon'></i>
-                            <span class="skills__name">HTML & CSS (75%)</span>
+                            <span class="skills__name">HTML, CSS, & Web Development</span>
+                            <span class="skills__name">75%</span>
                         </div>
-                        <div class="skills__bar skills__html"></div>
+                        <div class="skills__bar"><div class="skills__percentage"></div></div>
                     </div>
 
-                    <div class="skills__data">
+                    <div class="skills__data skills__prompt">
                         <div class="skills__names">
                             <i class='bx bx-bot skills__icon'></i>
-                            <span class="skills__name">Prompt Engineering (85%)</span>
+                            <span class="skills__name">Prompt Engineering & LLMs</span>
+                            <span class="skills__name">85%</span>
                         </div>
-                        <div class="skills__bar skills__prompt"></div>
+                        <div class="skills__bar"><div class="skills__percentage"></div></div>
                     </div>
                 </div>
-                
-                <div>              
-                    <img src="assets/img/skills.jpg" alt="" class="skills__img">
+
+                <div>
+                    <img src="assets/img/skills.jpg" alt="Code Snippet" class="skills__img">
                 </div>
             </div>
         </section>
 
-        <!-- WORK -->
-        <section class="work section" id="work">
-            <h2 class="section-title">Projects</h2>
+        <section class="work section" id="projects">
+            <h2 class="section-title">My Projects</h2>
             <div class="work__container bd-grid">
                 <div class="work__img">
-                    <img src="assets/img/netflix_clone.jpg" alt="Netflix Clone">
-                    <p>Netflix Clone</p>
-                </div>
-                <div class="work__img">
                     <img src="assets/img/trading_bot.jpg" alt="Trading Bot">
-                    <p>Trading Bot</p>
-                </div>
-                <div class="work__img">
-                    <img src="assets/img/blinkit_app.jpg" alt="Blinkit Hyperlocal App">
-                    <p>Blinkit Hyperlocal App</p>
-                </div>
-                <div class="work__img">
-                    <img src="assets/img/chat_app.jpg" alt="Web Chat App">
-                    <p>Web Chat App</p>
+                    <p>High-Frequency Trading Bot</p>
                 </div>
                 <div class="work__img">
                     <img src="assets/img/sepa_system.jpg" alt="SEPA-like System">
-                    <p>SEPA-like Trading System</p>
+                    <p>SEPA-like Trading System Prototype</p>
+                </div>
+                <div class="work__img">
+                    <img src="assets/img/blinkit_app.jpg" alt="Blinkit Hyperlocal App">
+                    <p>Blinkit Hyperlocal Delivery App Clone</p>
+                </div>
+                <div class="work__img">
+                    <img src="assets/img/netflix_clone.jpg" alt="Netflix Clone">
+                    <p>Responsive Netflix Clone (Frontend)</p>
+                </div>
+                <div class="work__img">
+                    <img src="assets/img/chat_app.jpg" alt="Web Chat App">
+                    <p>Real-time Web Chat Application</p>
                 </div>
             </div>
         </section>
 
-        <!-- CONTACT -->
         <section class="contact section" id="contact">
-            <h2 class="section-title">Contact Me</h2>
+            <h2 class="section-title">Get In Touch</h2>
             <div class="contact__container bd-grid">
-                <p>Email: <a href="mailto:rakshitsingh.jalal1202@gmail.com">rakshitsingh.jalal1202@gmail.com</a></p>
-                <p>GitHub: <a href="https://github.com/rakshitsinghh" target="_blank">github.com/rakshitsinghh</a></p>
-                <p>LinkedIn: <a href="https://www.linkedin.com/in/rakshit-singh-045974268/" target="_blank">linkedin.com/in/rakshit-singh</a></p>
+                <div class="contact__info">
+                    <p>I'm always open to discussing new software challenges, quantitative trading ideas, or collaborations.</p>
+                    <p>
+                        <i class='bx bx-envelope'></i> Email: <a href="mailto:rakshitsingh.jalal1202@gmail.com">rakshitsingh.jalal1202@gmail.com</a>
+                    </p>
+                    <p>
+                        <i class='bx bxl-github'></i> GitHub: <a href="https://github.com/rakshitsinghh" target="_blank">rakshitsinghh</a>
+                    </p>
+                    <p>
+                        <i class='bx bxl-linkedin-square'></i> LinkedIn: <a href="https://www.linkedin.com/in/rakshit-singh-045974268/" target="_blank">rakshit-singh</a>
+                    </p>
+                </div>
+                
+                <form action="" class="contact__form">
+                    <input type="text" placeholder="Name" class="contact__input">
+                    <input type="email" placeholder="Email" class="contact__input">
+                    <textarea name="" id="" cols="0" rows="5" class="contact__input" placeholder="Your Message"></textarea>
+                    <input type="button" value="Send Message" class="button contact__button">
+                </form>
             </div>
         </section>
     </main>
 
-    <script src="assets/js/main.js"></script>
+    <footer class="footer">
+        <p class="footer__copy">&#169; Rakshit Singh. All rights reserved.</p>
+        <p class="footer__copy">Designed with <i class='bx bxs-heart' style="color: var(--primary-color);"></i> and Code.</p>
+    </footer>
+
+    <script>
+        // --- JAVASCRIPT FOR INTERACTIVITY ---
+        
+        // 1. Mobile Menu Toggle
+        const showMenu = (toggleId, navId) => {
+            const toggle = document.getElementById(toggleId),
+                  nav = document.getElementById(navId);
+
+            if (toggle && nav) {
+                toggle.addEventListener('click', () => {
+                    nav.classList.toggle('show');
+                });
+            }
+        };
+        showMenu('nav-toggle', 'nav-menu');
+
+        // 2. Remove Menu on Mobile Link Click
+        const navLink = document.querySelectorAll('.nav__link');
+
+        function linkAction() {
+            const navMenu = document.getElementById('nav-menu');
+            // When a link is clicked, the 'show' class is removed
+            navMenu.classList.remove('show');
+        }
+        navLink.forEach(n => n.addEventListener('click', linkAction));
+
+        // 3. Scrollspy (Active Link Highlighting)
+        const sections = document.querySelectorAll('section[id]');
+
+        function scrollActive() {
+            const scrollY = window.pageYOffset;
+
+            sections.forEach(current => {
+                const sectionHeight = current.offsetHeight;
+                const sectionTop = current.offsetTop - 50;
+                const sectionId = current.getAttribute('id');
+                const navItem = document.querySelector('.nav__menu a[href*=' + sectionId + ']');
+
+                if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+                    navItem?.classList.add('active-link');
+                } else {
+                    navItem?.classList.remove('active-link');
+                }
+            });
+        }
+        window.addEventListener('scroll', scrollActive);
+
+    </script>
 
 </body>
 </html>

@@ -8,22 +8,20 @@
     <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
     
     <style>
-        /*===== GOOGLE FONTS =====*/
+        /*===== GOOGLE FONTS & VARIABLES =====*/
         @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap");
 
-        /*===== VARIABLES CSS =====*/
         :root {
             --header-height: 3.5rem;
             --font-semi: 600;
             --font-bold: 800;
 
             /* NEW MODERN PALETTE */
-            --hue-color: 224; /* Base blue hue is kept for secondary color */
             --primary-color: #FF5722; /* Vibrant Orange/Red */
             --secondary-color: #1A1A2E; /* Deep Navy Background */
             --text-color: #F8F8F8; /* Light Text */
             --text-light: #AAAAAA; /* Lighter text for context */
-            --bg-color-light: #2A2A4A; /* Slightly lighter background for sections */
+            --bg-color-light: #2A2A4A; /* Slightly lighter background for sections/cards */
 
             /*===== Typography & Spacing =====*/
             --big-font-size: 2.5rem;
@@ -65,7 +63,7 @@
             font-family: var(--body-font);
             font-size: var(--normal-font-size);
             color: var(--text-color);
-            background-color: var(--secondary-color); /* Deep Navy Background */
+            background-color: var(--secondary-color);
             line-height: 1.6;
         }
 
@@ -83,10 +81,10 @@
         a {
             text-decoration: none;
             color: var(--primary-color);
+            transition: color 0.3s, opacity 0.3s;
         }
         a:hover {
             opacity: 0.8;
-            transition: 0.3s;
         }
 
         img {
@@ -108,14 +106,14 @@
         }
 
         .section-title::after {
-            position: absolute;
             content: "";
+            position: absolute;
             width: 80px;
             height: 0.2rem;
             left: 0;
             right: 0;
             margin: auto;
-            top: 2.5rem; /* Adjusted position */
+            top: 2.5rem;
             background-color: var(--primary-color);
             border-radius: 5px;
         }
@@ -126,8 +124,9 @@
             background-color: var(--secondary-color);
             transition: background-color 0.3s;
         }
+        /* Alternating background color for visual separation */
         .section:nth-child(even) {
-            background-color: var(--bg-color-light); /* Light alternate background */
+            background-color: var(--bg-color-light); 
         }
 
         /*===== LAYOUT =====*/
@@ -146,7 +145,7 @@
             left: 0;
             z-index: var(--z-fixed);
             background-color: var(--secondary-color);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5); /* Darker shadow */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
         }
 
         /*===== NAV =====*/
@@ -168,7 +167,7 @@
                 padding: 2rem;
                 background-color: var(--bg-color-light);
                 transition: 0.4s;
-                box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+                box-shadow: -2px 0 10px rgba(0, 0, 0, 0.4);
             }
         }
 
@@ -185,7 +184,7 @@
 
         .nav__link:hover {
             color: var(--primary-color);
-            opacity: 1; /* Override default a:hover opacity */
+            opacity: 1;
         }
 
         .nav__logo {
@@ -206,8 +205,8 @@
         }
 
         .active-link::after {
-            position: absolute;
             content: "";
+            position: absolute;
             width: 100%;
             height: 0.15rem;
             left: 0;
@@ -220,7 +219,7 @@
             right: 0;
         }
 
-        /*===== HOME =====*/
+        /*===== HOME (Hero Section) =====*/
         .home {
             row-gap: 5rem;
             padding: 6rem 0 5rem;
@@ -234,13 +233,19 @@
 
         .home__title {
             font-size: var(--big-font-size);
-            margin-bottom: var(--mb-4);
+            margin-bottom: var(--mb-2);
             font-weight: var(--font-bold);
+            line-height: 1.1;
         }
 
         .home__title-color {
             color: var(--primary-color);
-            display: block; /* Newline for better title flow */
+            display: block;
+        }
+        .home__title-subtitle {
+            font-size: var(--h2-font-size);
+            color: var(--text-light);
+            margin-bottom: var(--mb-4);
         }
 
         .home__social {
@@ -252,16 +257,17 @@
         .home__social-icon {
             font-size: 2rem;
             color: var(--text-light);
-            transition: color 0.3s;
+            transition: color 0.3s, transform 0.3s;
             margin: 0 var(--mb-2);
         }
 
         .home__social-icon:hover {
             color: var(--primary-color);
+            transform: translateY(-5px);
         }
 
         .home__img {
-            order: -1; /* Move image above data on mobile */
+            order: -1;
             margin: 0 auto;
             width: 280px;
         }
@@ -269,7 +275,8 @@
         .home__img img {
             border-radius: 50%;
             border: 5px solid var(--primary-color);
-            box-shadow: 0 0 20px rgba(255, 87, 34, 0.6);
+            /* Soft glow effect */
+            box-shadow: 0 0 25px rgba(255, 87, 34, 0.6); 
         }
 
 
@@ -306,7 +313,7 @@
         .about__img img {
             width: 250px;
             border-radius: 0.5rem;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
         }
 
         .about__text {
@@ -336,12 +343,13 @@
             margin-bottom: var(--mb-4);
             border-radius: 0.5rem;
             background-color: var(--secondary-color);
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
-            border: 1px solid var(--bg-color-light);
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
+            border: 1px solid var(--primary-color); /* Light border on data cards */
             transition: transform 0.3s;
         }
         .skills__data:hover {
             transform: translateY(-5px);
+            box-shadow: 0px 8px 20px rgba(255, 87, 34, 0.2);
         }
 
         .skills__names {
@@ -380,11 +388,10 @@
             transition: width 1.5s ease-in-out;
         }
         
-        /* SKILL WIDTHS (Removed original fixed skills and used dynamic classes) */
-        .skills__python .skills__percentage { width: 90%; }
+        /* SKILL WIDTHS */
+        .skills__trading .skills__percentage { width: 90%; }
         .skills__html .skills__percentage { width: 75%; }
         .skills__prompt .skills__percentage { width: 85%; }
-        .skills__trading .skills__percentage { width: 90%; } /* Added a new class for clarity */
 
 
         .skills__img {
@@ -394,8 +401,8 @@
 
         /* ===== WORK (Projects) =====*/
         .work__container {
-            gap: 2rem; /* Changed row-gap to gap */
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Better for responsiveness */
+            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             padding-top: 2rem;
         }
 
@@ -405,16 +412,20 @@
             overflow: hidden;
             position: relative;
             cursor: pointer;
+            transition: transform 0.3s;
+        }
+        .work__img:hover {
+            transform: translateY(-5px);
         }
 
         .work__img img {
             transition: transform 0.5s ease;
-            filter: brightness(0.7); /* Slightly darken image */
+            filter: brightness(0.7);
         }
 
         .work__img:hover img {
             transform: scale(1.05);
-            filter: brightness(1.0); /* Brighten on hover */
+            filter: brightness(1.0);
         }
         
         .work__img p {
@@ -423,7 +434,7 @@
             left: 0;
             right: 0;
             padding: 0.75rem;
-            background-color: rgba(0, 0, 0, 0.7);
+            background-color: rgba(0, 0, 0, 0.8);
             text-align: center;
             font-weight: var(--font-semi);
             font-size: var(--small-font-size);
@@ -438,12 +449,18 @@
             justify-items: center;
         }
         
+        .contact__info {
+            text-align: center;
+        }
+        .contact__info i {
+            color: var(--primary-color);
+            margin-right: var(--mb-1);
+        }
         .contact__info a {
             color: var(--text-color);
             font-size: var(--normal-font-size);
             display: block;
             margin-bottom: var(--mb-2);
-            transition: color 0.3s;
         }
 
         .contact__info a:hover {
@@ -476,40 +493,18 @@
         }
 
         .contact__button {
-            margin-left: unset;
-            margin-right: unset;
+            width: 100%;
+            margin: 0;
         }
 
 
         /* ===== FOOTER =====*/
         .footer {
-            background-color: #111122; /* Even darker shade */
+            background-color: #111122;
             color: var(--text-color);
             text-align: center;
             padding: 2.5rem 0;
             border-top: 2px solid var(--primary-color);
-        }
-
-        .footer__title {
-            font-size: 2.5rem;
-            margin-bottom: var(--mb-4);
-            color: var(--primary-color);
-            font-weight: var(--font-bold);
-        }
-
-        .footer__social {
-            margin-bottom: var(--mb-4);
-        }
-
-        .footer__icon {
-            font-size: 2rem;
-            color: var(--text-color);
-            margin: 0 var(--mb-2);
-            transition: color 0.3s;
-        }
-
-        .footer__icon:hover {
-            color: var(--primary-color);
         }
 
         .footer__copy {
@@ -624,8 +619,8 @@
             </div>
 
             <div class="home__social">
-                <a href="https://www.linkedin.com/in/rakshit-singh-045974268/" class="home__social-icon"><i class='bx bxl-linkedin-square'></i></a>
-                <a href="https://github.com/rakshitsinghh" class="home__social-icon"><i class='bx bxl-github'></i></a>
+                <a href="https://www.linkedin.com/in/rakshit-singh-045974268/" class="home__social-icon" target="_blank"><i class='bx bxl-linkedin-square'></i></a>
+                <a href="https://github.com/rakshitsinghh" class="home__social-icon" target="_blank"><i class='bx bxl-github'></i></a>
                 <a href="mailto:rakshitsingh.jalal1202@gmail.com" class="home__social-icon"><i class='bx bx-mail-send'></i></a>
             </div>
         </section>
@@ -643,7 +638,7 @@
                         <br><br>
                         My background also integrates deep interest in **Finance, Economics, and Human Psychology**, drawing insights from foundational texts like **"Wealth of Nations"** and **"The Psychology of Money"** to inform my trading and software design strategies. I thrive on translating complex quantitative models into robust, efficient software systems.
                     </p>
-                    <a href="assets/docs/Rakshit_Singh_Resume.pdf" download class="button">Download Resume</a>
+                    <a href="assets/docs/Rakshit_Singh_Resume.pdf" download class="button">Download Resume</a> 
                 </div>
             </div>
         </section>
@@ -718,7 +713,7 @@
             <h2 class="section-title">Get In Touch</h2>
             <div class="contact__container bd-grid">
                 <div class="contact__info">
-                    <p>I'm always open to discussing new software challenges, quantitative trading ideas, or collaborations.</p>
+                    <p class="mb-4">I'm always open to discussing new software challenges, quantitative trading ideas, or collaborations. Reach out anytime!</p>
                     <p>
                         <i class='bx bx-envelope'></i> Email: <a href="mailto:rakshitsingh.jalal1202@gmail.com">rakshitsingh.jalal1202@gmail.com</a>
                     </p>
@@ -746,8 +741,6 @@
     </footer>
 
     <script>
-        // --- JAVASCRIPT FOR INTERACTIVITY ---
-        
         // 1. Mobile Menu Toggle
         const showMenu = (toggleId, navId) => {
             const toggle = document.getElementById(toggleId),
@@ -766,7 +759,6 @@
 
         function linkAction() {
             const navMenu = document.getElementById('nav-menu');
-            // When a link is clicked, the 'show' class is removed
             navMenu.classList.remove('show');
         }
         navLink.forEach(n => n.addEventListener('click', linkAction));
@@ -791,7 +783,6 @@
             });
         }
         window.addEventListener('scroll', scrollActive);
-
     </script>
 
 </body>
